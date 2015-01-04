@@ -1,0 +1,95 @@
+\documentclass[12pt]{etutez}
+
+%% DEĞİŞKENLER
+\baslik{TÜRKÇE BAŞLIK}
+\title{TITLE OF THE THESIS}
+\anahtarlar{anahtar kelimeler}
+\keywords{keywords}
+\teztipi{DOKTORA TEZİ}
+\teztipikucuk{Doktora}
+\thesistype{Ph.D.}              % Yuksek lisans icin M.Sc. doktora icin Ph.D.
+\yazar{ÖRNEK ÖĞRENCİ}
+\yazarkucuk{Örnek ÖĞRENCİ}        % Soyadi buyuk harflerle yazilmali
+\bolum{BİLGİSAYAR MÜHENDİSLİĞİ}
+\bolumkucuk{Bilgisayar Mühendisliği}
+\dept{Computer Engineering}
+\enstitu{FEN BİLİMLERİ ENSTİTÜSÜ}
+\enstitukucuk{Fen Bilimleri Enstitüsü}
+\institute{Institute of Natural and Applied Sciences}
+\universite{TOBB EKONOMİ VE TEKNOLOJİ ÜNİVERSİTESİ}
+\universitekucuk{TOBB Ekonomi ve Teknoloji Üniversitesi}
+\university{TOBB University of Economics and Technology}
+\danisman{Doç. Dr. ____ _____}
+\advisor{Assoc. Prof. M. ____ _____}
+\juribaskani{Prof. Dr. ____ _____}
+\juriuyesibir{Yrd. Doç. Dr. ____ _____}
+\juriuyesiiki{Doç. Dr. ____ _____}
+\juriuyesiuc{Yrd. Doç. Dr. ____ _____}
+\abdbaskani{Doç. Dr. ____ _____}
+\enstitumuduru{Prof. Dr. ____ _____}
+\tarih{EYLÜL 2015}
+\tarihkucuk{Eylül 2015}
+\submitdate{September 2015}
+
+% sayfa numarası için
+\fancyhf{}
+\cfoot{\thepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN DOCUMENT
+\begin{document}
+
+\pagestyle{plain}
+\pagenumbering{roman}
+
+\titlepagePhD					% kapak sayfası
+\signaturepagePhD				% imza sayfası
+\tezbildirimsayfasi				% tez bildirim
+
+\begin{ozet}
+Doktora tezimin Türkçe Özeti budur.
+\end{ozet}
+
+\begin{abstract}
+This is the abstract of my thesis.
+\end{abstract}
+
+\begin{tesekkur}
+Bu çalışmayı tamamlamamda emeği geçen herkese teşekkür ederim...
+\end{tesekkur}
+
+\newpage
+\addcontentsline{toc}{chapter}{\numberline{\contentsname}}
+\tableofcontents
+
+\newpage
+\addcontentsline{toc}{chapter}{\numberline{\listfigurename}}
+\listoffigures    % Tezde herhangi bir sekil yoksa silinmelidir
+
+\newpage
+\addcontentsline{toc}{chapter}{\numberline{\listtablename}}
+\listoftables     % Tezde herhangi bir tablo yoksa silinmelidir
+
+\input{kisaltmalar}
+\input{semboller}
+
+\newpage
+\pagenumbering{arabic}
+%\setcounter{page}{1}
+%\setcounter{section}{1}
+%\setcounter{secnumdepth}{5}
+%\setcounter{tocdepth}{4}
+
+\input{bolum1}
+\input{bolum2}
+\input{bolum3}
+\input{bolum4}
+\input{bolum5}
+
+\bibliographystyle{abbrv} % kaynakca.bib ile beraber kullanim icin.
+\bibliography{kaynakca}   % kaynakca.bib dosyasi hazirlanirsa bu satir kullanilmali
+
+\input{ekler}
+\input{ozgecmis}
+
+\end{document}
