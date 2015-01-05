@@ -1,5 +1,6 @@
 etutez
 ======
+TOBB ETÜ Yüksek lisans ve Doktora tezi için LaTeX şablonu.
 
 DİKKAT
 ======
