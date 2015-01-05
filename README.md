@@ -13,5 +13,5 @@ Kurulum için linux makinenize texlive'in son sürümünü kurunuz.
 
 Notlar
 ===
-* Türkçe karakterler için UTF-8 kulanılmıştır. Bu sebeple UTF-8 uyumlu bir editör kullanırsanız (dosyalarınızı UTF-8 kaydederseniz sorun çıkmayacaktır.)
+* Türkçe karakterler için UTF-8 kulanılmıştır. Bu sebeple UTF-8 uyumlu bir editör kullanırsanız (dosyalarınızı UTF-8 kaydederseniz) sorun çıkmayacaktır.
 
