@@ -24,6 +24,7 @@
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{mathptmx}
+\usepackage{tocloft}
 \usepackage[toc,page,titletoc]{appendix}
 
 \tolerance=6000
@@ -48,13 +49,27 @@
 \newcommand{\pe}{\preceq}
 \newcommand{\po}{\prec}
 
-\renewcommand\contentsname{İÇİNDEKİLER }
-\renewcommand\listfigurename{ŞEKİLLERİN LİSTESİ}
-\renewcommand\listtablename{ÇİZELGELERİN LİSTESİ}
-\renewcommand\bibname{KAYNAKLAR}
-\renewcommand\figurename{Şekil}
-\renewcommand\tablename{Çizelge}
-\renewcommand\chaptername{BÖLÜM}
+\addto\captionsturkish{ % babel için böyle değiştiriyoruz
+    \renewcommand\contentsname{İÇİNDEKİLER}
+    \renewcommand\listfigurename{ŞEKİLLERİN LİSTESİ}
+    \renewcommand\listtablename{ÇİZELGELERİN LİSTESİ}
+    \renewcommand\chaptername{BÖLÜM}
+    \renewcommand\bibname{KAYNAKLAR}
+    \renewcommand\figurename{Şekil}
+    \renewcommand\tablename{Çizelge}
+}
+
+%% içindekiler toc,lof,lot başlıkları
+\renewcommand{\cftdot}{\ensuremath{ }}
+\renewcommand{\cfttoctitlefont}{\hfill\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftloftitlefont}{\hfill\bfseries}
+\renewcommand{\cftafterloftitle}{\hfill}
+\renewcommand{\cftlottitlefont}{\hfill\bfseries}
+\renewcommand{\cftafterlottitle}{\hfill}
+\setlength\cftbeforetoctitleskip{-0.64cm}
+\setlength\cftbeforeloftitleskip{-0.64cm}
+\setlength\cftbeforelottitleskip{-0.64cm}
 
 %% string değişkenler
 \def\thesistype#1{\gdef\@thesistype{#1}}
@@ -68,6 +83,7 @@
 \def\bolumkucuk#1{\gdef\@bolumkucuk{#1}}
 \def\enstitu#1{\gdef\@enstitu{#1}}
 \def\enstitukucuk#1{\gdef\@enstitukucuk{#1}}
+\def\enstitukisa#1{\gdef\@enstitukisa{#1}}
 \def\institute#1{\gdef\@institute{#1}}
 \def\universite#1{\gdef\@universite{#1}}
 \def\universitekucuk#1{\gdef\@universitekucuk{#1}}
@@ -92,7 +108,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% KAPAK SAYFASI
-\def\titlepagePhD{
+\def\kapaksayfasi{
     \thispagestyle{empty}
     \begin{center}
     \begin{bfseries}
@@ -116,49 +132,58 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% İMZA SAYFASI
-\def\signaturepagePhD{
+\def\imzasayfasi{
     \thispagestyle{plain}
 
-    Fen Bilimleri Enstitü onayı
+    {\@enstitukisa} Enstitü onayı
     \begin{flushright}
     \begin{minipage}[t]{7cm}
     \begin{center}
-        \line(1,0){150}\\
+        \rule{5cm}{0.6pt}\\
         \@enstitumuduru\\
         Müdür
     \end{center}
     \end{minipage}
     \end{flushright}
+    \vspace{\satbos}
 
     Bu tezin {\@teztipikucuk} derecesinin bütün gereksinimlerini sağladığını onaylarım.
+    \vspace{\satbos}
     \begin{flushright}
     \begin{minipage}[t]{7cm}
     \begin{center}
-        \line(1,0){150}\\
+        \rule{5cm}{0.6pt}\\
         \@abdbaskani\\
         Anabilim Dalı Başkanı
     \end{center}
     \end{minipage}
     \end{flushright}
+    \vspace{\satbos}
 
-    \newpage
-
-    {\@yazarkucuk} tarafından hazırlanan {\@baslik} adlı bu tezin {\@teztipikucuk} tezi olarak uygun olduğunu onaylarım.\\
+    {\@yazarkucuk} tarafından hazırlanan {\@baslik} adlı bu tezin {\@teztipikucuk} tezi olarak uygun olduğunu onaylarım.
     \begin{flushright}
     \begin{minipage}[t]{7cm}
     \begin{center}
-        \line(1,0){150}\\
+        \rule{5cm}{0.6pt}\\
         \@danisman\\
         Tez Danışmanı
     \end{center}
     \end{minipage}
     \end{flushright}
+    \vspace{\satbos}
 
-    Tez Jüri Üyeleri\\
-    Başkan {\@juribaskani} \hfill\line(1,0){150}\\
-    Üye {\@juriuyesibir} \hfill\line(1,0){150}\\
-    Üye {\@juriuyesiiki} \hfill\line(1,0){150}\\
-    Üye {\@juriuyesiuc} \hfill\line(1,0){150}\\
+    Tez Jüri Üyeleri
+
+    \begin{tabular}{@{}lll@{}}
+    \vspace{\satbos}
+    Başkan & : \@juribaskani & \hfill\rule{5cm}{0.6pt}\\
+    \vspace{\satbos}
+    Üye & : \@juriuyesibir & \hfill\rule{5cm}{0.6pt}\\
+    \vspace{\satbos}
+    Üye & : \@juriuyesiiki & \hfill\rule{5cm}{0.6pt}\\
+    \vspace{\satbos}
+    Üye & : \@juriuyesiuc & \hfill\rule{5cm}{0.6pt}\\
+    \end{tabular}
 
     \newpage
 }
@@ -179,7 +204,15 @@
     orijinal olmayan her türlü kaynağa eksiksiz atıf
     yapıldığını bildiririm.
     
-    \@yazarkucuk
+    \begin{flushright}
+    \begin{minipage}[t]{7cm}
+    \begin{center}
+        \vspace{\satbos}
+        \@yazarkucuk
+    \end{center}
+    \end{minipage}
+    \end{flushright}
+    
     \newpage
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -257,7 +290,6 @@
    \textbf{TEŞEKKÜR}
    \end{center}
    \vspace{\satbos}
-   %\noindent\ignorespaces
 }
 {
     \newpage
