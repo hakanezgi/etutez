@@ -2,10 +2,6 @@ etutez
 ======
 TOBB ETÜ Yüksek lisans ve Doktora tezi için LaTeX şablonu.
 
-DİKKAT
-======
-Bu çalışma HENÜZ Üniversitenin resmi formatında değildir.
-
 Kurulum ve Çalıştırma
 ===
 Bu proje linux işletim sistemi ve texlive ile uyumludur.
