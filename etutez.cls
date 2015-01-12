@@ -25,6 +25,7 @@
 \usepackage{fancyhdr}
 \usepackage{mathptmx}
 \usepackage{tocloft}
+\usepackage{tabularx}
 \usepackage[toc,page,titletoc]{appendix}
 
 \tolerance=6000
@@ -174,16 +175,14 @@
 
     Tez Jüri Üyeleri
 
-    \begin{tabular}{@{}lll@{}}
-    \vspace{\satbos}
-    Başkan & : \@juribaskani & \hfill\rule{5cm}{0.6pt}\\
-    \vspace{\satbos}
-    Üye & : \@juriuyesibir & \hfill\rule{5cm}{0.6pt}\\
-    \vspace{\satbos}
-    Üye & : \@juriuyesiiki & \hfill\rule{5cm}{0.6pt}\\
-    \vspace{\satbos}
-    Üye & : \@juriuyesiuc & \hfill\rule{5cm}{0.6pt}\\
-    \end{tabular}
+    \begin{table}[h]
+    \begin{tabularx}{\textwidth}{@{}llX@{}}
+    Başkan & : \@juribaskani & \hfill\rule{5cm}{0.6pt}\\[\satbos]
+    Üye & : \@juriuyesibir & \hfill\rule{5cm}{0.6pt}\\[\satbos]
+    Üye & : \@juriuyesiiki & \hfill\rule{5cm}{0.6pt}\\[\satbos]
+    Üye & : \@juriuyesiuc & \hfill\rule{5cm}{0.6pt}
+    \end{tabularx}
+    \end{table}
 
     \newpage
 }
@@ -222,17 +221,19 @@
 \newenvironment{ozet}{
     \thispagestyle{plain}
     \addcontentsline{toc}{chapter}{\numberline{ÖZET}}
-
+    \begin{table}[h]
     \begin{bfseries}
-    \begin{tabular}{lcl}
+    \begin{tabularx}{\textwidth}{@{}llX@{}}
         Üniversitesi&:&\@universitekucuk\\
         Enstitüsü&:&\@enstitukucuk\\
         Anabilim Dalı&:&\@bolumkucuk\\
         Tez Danışmanı&:&\@danisman\\
         Tez Türü ve Tarihi&:&\@teztipikucuk \mbox{ } --  \mbox{ } \@tarihkucuk
-    \end{tabular}
+    \end{tabularx}
+    \end{bfseries}
+    \end{table}
+    \begin{bfseries}
     \begin{center}
-        \vspace{\satbos}
         \@yazarkucuk\\
         \vspace{\satbos}
         \@baslik\\
@@ -254,17 +255,19 @@
 \renewenvironment{abstract}{
     \thispagestyle{plain}
     \addcontentsline{toc}{chapter}{\numberline{ABSTRACT}}
-
+    \begin{table}[h]
     \begin{bfseries}
-    \begin{tabular}{lcl}
+    \begin{tabularx}{\textwidth}{@{}llX@{}}
         University &:&\@university\\
         Institute &:&\@institute\\
         Science Programme &:&\@dept \\
         Supervisor &:&\@advisor \\
         Degree Awarded and Date &:&\@thesistype \mbox{ } --  \mbox{ } \@submitdate
-    \end{tabular}
+    \end{tabularx}
+    \end{bfseries}
+    \end{table}
+    \begin{bfseries}
     \begin{center}
-        \vspace{\satbos}
         \@yazarkucuk\\
         \vspace{\satbos}
         \@title\\
