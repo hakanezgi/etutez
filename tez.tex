@@ -1,4 +1,8 @@
+%% ETÜ TEZ şablonu yüklenir
 \documentclass[12pt]{etutez}
+
+% Tez ile ilgili değişkenleri (öğrenci ad, soyad, bilim dalı, hocalar, vb.),
+% özet, abstract ve teşekkür kısmını bu dosyaya giriyoruz
 
 %% DEĞİŞKENLER
 \baslik{TÜRKÇE BAŞLIK}
@@ -7,9 +11,9 @@
 \keywords{keywords}
 \teztipi{DOKTORA TEZİ}
 \teztipikucuk{Doktora}
-\thesistype{Ph.D.}              % Yuksek lisans icin M.Sc. doktora icin Ph.D.
+\thesistype{Ph.D.}              % Yüksek lisans için M.Sc. doktora için Ph.D.
 \yazar{ÖRNEK ÖĞRENCİ}
-\yazarkucuk{Örnek ÖĞRENCİ}        % Soyadi buyuk harflerle yazilmali
+\yazarkucuk{Örnek ÖĞRENCİ}      % Soyadı büyük harflerle yazılmalı
 \bolum{BİLGİSAYAR MÜHENDİSLİĞİ}
 \bolumkucuk{Bilgisayar Mühendisliği}
 \dept{Computer Engineering}
@@ -32,54 +36,59 @@
 \tarihkucuk{Eylül 2015}
 \submitdate{September 2015}
 
-% sayfa numarası için
+%% Sayfa numarası için (sayfa altına, ortalanmış)
 \fancyhf{}
 \cfoot{\thepage}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% BEGIN DOCUMENT
+%% TEZ BAŞLIYORRRRR
 \begin{document}
 
 \pagestyle{plain}
+
 \pagenumbering{roman}
 
-\kapaksayfasi					% kapak sayfası
-\imzasayfasi					% imza sayfası
-\tezbildirimsayfasi				% tez bildirim
+\kapaksayfasi			% kapak sayfası
+\imzasayfasi			% imza sayfası
+\tezbildirimsayfasi		% tez bildirim sayfası
 
+%% ÖZET SAYFASI
 \begin{ozet}
 Doktora tezimin Türkçe Özeti budur.
 \end{ozet}
 
+%% ABSTRACT SAYFASI
 \begin{abstract}
 This is the abstract of my thesis.
 \end{abstract}
 
+%% TEŞEKKÜR SAYFASI
 \begin{tesekkur}
 Bu çalışmayı tamamlamamda emeği geçen herkese teşekkür ederim...
 \end{tesekkur}
 
+%% İÇİNDEKİLER
 \newpage
 \addcontentsline{toc}{chapter}{\numberline{\contentsname}}
 \tableofcontents
 
+%% ŞEKİLLER LİSTESİ
+% Tezde herhangi bir şekil yoksa çıkartılmalıdır
 \newpage
 \addcontentsline{toc}{chapter}{\numberline{\listfigurename}}
-\listoffigures    % Tezde herhangi bir sekil yoksa silinmelidir
+\listoffigures
 
+%% TABLOLAR LİSTESİ
+% Tezde herhangi bir tablo yoksa çıkartılmalıdır
 \newpage
 \addcontentsline{toc}{chapter}{\numberline{\listtablename}}
-\listoftables     % Tezde herhangi bir tablo yoksa silinmelidir
+\listoftables
 
-\input{kisaltmalar}
-\input{semboller}
+\input{kisaltmalar}	% kısaltmalar
+\input{semboller}	% semboller
 
+%% TEZ BÖLÜMLERİ
 \newpage
 \pagenumbering{arabic}
-%\setcounter{page}{1}
-%\setcounter{section}{1}
-%\setcounter{secnumdepth}{5}
-%\setcounter{tocdepth}{4}
 
 \input{bolum1}
 \input{bolum2}
@@ -87,10 +96,12 @@ Bu çalışmayı tamamlamamda emeği geçen herkese teşekkür ederim...
 \input{bolum4}
 \input{bolum5}
 
-\bibliographystyle{abbrv} % kaynakca.bib ile beraber kullanim icin.
-\bibliography{kaynakca}   % kaynakca.bib dosyasi hazirlanirsa bu satir kullanilmali
+%% KAYNAKLAR
+\bibliographystyle{abbrv}  % .bib dosyası ile beraber kullanım için
+\bibliography{kaynaklar}   % .bib dosyası hazırlanırsa bu satır kullanılmalı
 
-\input{ekler}
-\input{ozgecmis}
+\input{ekler}		% ekler
+\input{ozgecmis}	% özgeçmiş
 
 \end{document}
+%% TEZ BİTTİ :)
