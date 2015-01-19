@@ -44,12 +44,12 @@
 \begin{document}
 
 \pagestyle{plain}
-
 \pagenumbering{roman}
 
-\kapaksayfasi			% kapak sayfası
-\imzasayfasi			% imza sayfası
-\tezbildirimsayfasi		% tez bildirim sayfası
+%% KAPAK, İMZA, TEZ BİLDİRİM
+\kapaksayfasi
+\imzasayfasi
+\tezbildirimsayfasi
 
 %% ÖZET SAYFASI
 \begin{ozet}
@@ -83,8 +83,9 @@ Bu çalışmayı tamamlamamda emeği geçen herkese teşekkür ederim...
 \addcontentsline{toc}{chapter}{\numberline{\listtablename}}
 \listoftables
 
-\input{kisaltmalar}	% kısaltmalar
-\input{semboller}	% semboller
+%% KISALTMALAR ve SEMBOLLER
+\input{kisaltmalar}
+\input{semboller}
 
 %% TEZ BÖLÜMLERİ
 \newpage
@@ -100,8 +101,15 @@ Bu çalışmayı tamamlamamda emeği geçen herkese teşekkür ederim...
 \bibliographystyle{abbrv}  % .bib dosyası ile beraber kullanım için
 \bibliography{kaynaklar}   % .bib dosyası hazırlanırsa bu satır kullanılmalı
 
-\input{ekler}		% ekler
-\input{ozgecmis}	% özgeçmiş
+%% EKLER
+\begin{appendices}
+\appendix
+\input{ek1}
+\input{ek2}
+\end{appendices}
+
+%% ÖZGEÇMİŞ
+\input{ozgecmis}
 
 \end{document}
 %% TEZ BİTTİ :)
