@@ -58,6 +58,9 @@
     \renewcommand\bibname{KAYNAKLAR}
     \renewcommand\figurename{Şekil}
     \renewcommand\tablename{Çizelge}
+    \renewcommand\appendixname{}
+    \renewcommand\appendixtocname{EKLER}
+    \renewcommand\appendixpagename{EKLER}
 }
 
 %% içindekiler toc,lof,lot başlıkları
